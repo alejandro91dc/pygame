@@ -35,16 +35,24 @@ class Pika(pygame.sprite.Sprite):
     def __init__(self):
         super(Pika, self).__init__()
         self.images = []
-        self.images.append(load_image('images/pika1.png'))
-        self.images.append(load_image('images/pika2.png'))
-        self.images.append(load_image('images/pika3.png'))
-        self.images.append(load_image('images/pika4.png'))
+        self.images.append(load_image('images/pika1.png', True))
+        self.images.append(load_image('images/pika1.png', True))
+        self.images.append(load_image('images/pika1.png', True))
+        self.images.append(load_image('images/pika2.png', True))
+        self.images.append(load_image('images/pika2.png', True))
+        self.images.append(load_image('images/pika2.png', True))
+        self.images.append(load_image('images/pika3.png', True))
+        self.images.append(load_image('images/pika3.png', True))
+        self.images.append(load_image('images/pika3.png', True))
+        self.images.append(load_image('images/pika4.png', True))
+        self.images.append(load_image('images/pika4.png', True))
+        self.images.append(load_image('images/pika4.png', True))
 
         # assuming both images are 64x64 pixels
 
         self.index = 0
         self.image = self.images[self.index]
-        self.rect = pygame.Rect(5, 5, 64, 64)
+        self.rect = pygame.Rect(20, 450, 64, 64)
 
     def update(self):
         '''This method iterates through the elements inside self.images and
@@ -120,9 +128,10 @@ def main():
         s -= 0.5
         if s < -w:
             s = w
-        #screen.blit(bola.image, bola.rect)
+        screen.blit(bola.image, bola.rect)
         mi_grupo.update()
-        pygame.display.update()
+        mi_grupo.draw(screen)
+#        pygame.display.update()
         pygame.display.flip()
     return 0
 
